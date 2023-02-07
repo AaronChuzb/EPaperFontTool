@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-09-22 14:40:26
  * @LastEditors: AaronChu
- * @LastEditTime: 2023-02-07 11:24:32
+ * @LastEditTime: 2023-02-07 11:35:39
 -->
 
 # EPaperFontTool
@@ -12,6 +12,20 @@
 基于 SdFat 和微雪墨水屏驱动的内存卡字库驱动，文件系统和屏幕的驱动都可以更换，只需替换少量代码即可。
 
 ## 使用步骤
+1. PlatformIO平台只需要放入lib文件夹即可，arduino平台下放到跟.ino文件同级目录下。
+
+2. 初始化屏幕和挂载文件系统
+
+3. 随后初始化字体工具，需要将屏幕和文件系统的类传入。
+```c++
+FontTool fontTool;
+
+void setup()
+{
+  fontTool.Init(&sd, &Paint);
+}
+
+```
 
 ## 已取模字体列表
 
